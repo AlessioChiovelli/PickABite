@@ -1,7 +1,7 @@
 # PickABite
 
 
-This application uses LLaMA with the 3.1 models ()
+This application uses LLaMA with the 3.1 models ([llama-3.1-70b-versatile, meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo, "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"])
 to create mini games based on the alimentary plan of a kid (loaded by the parents).
 
 The games available are:
