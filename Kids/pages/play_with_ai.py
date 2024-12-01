@@ -2,6 +2,7 @@ import streamlit as st
 import os
 from functools import partial
 from PIL import Image
+from uuid import uuid4
 
 from Classes.KidsAgents import State, TamagochiGraph, DishDescription
 
@@ -29,8 +30,8 @@ def agent_button_to_choose():
 
 def show_llm_recipe(dish : DishDescription):
     st.title(dish.emoji + "\n" + dish.name)
-    st.text_area("What i think about this recipe", dish.what_i_like_about_it, disabled=True)
-    st.text_area("Indications 4 a diet", dish.indications, disabled=True)
+    st.text_area("What i think about this recipe", dish.what_i_like_about_it, disabled=True, key = str(uuid4()))
+    st.text_area("Indications 4 a diet", dish.indications, disabled=True, key = str(uuid4()))
 
 def chat():
     # Initialize chat history

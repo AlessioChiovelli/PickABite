@@ -131,7 +131,7 @@ def register_my_kid():
             th.run_tools(completion)
             st.success("Your kid has been registered successfully!")
             st.balloons()
-            st.write("Here you will see the 2 alimentary plan the llm will use to remember the kids info")
-            st.text_area("Filtered alimentary plan", completion.choices[0].message.content, height=200)
+            # st.write("Here you will see the 2 alimentary plan the llm will use to remember the kids info")
+            # st.text_area("Filtered alimentary plan", completion.choices[0].message.content, height=200)
 
 # register_my_kid()
