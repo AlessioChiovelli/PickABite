@@ -1,0 +1,9 @@
+[server]
+port = 8500
+baseUrlPath = "/PickABite"
+[theme]
+# primaryColor = "#f29e38"
+secondaryBackgroundColor = "#f29e38"
+textColor = "#000000"
+# backgroundColor =
+# secondaryBackgroundColor =
