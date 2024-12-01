@@ -25,4 +25,4 @@ Technologies used:
 Developers:
 
 - Alessio Chiovelli: Chiovelli.alessio@gmail.com
-- Sean cesare lazzeri: sea.ces.laz@gmail.com
+- Sean Cesare Lazzeri: sea.ces.laz@gmail.com
