@@ -1,10 +1,31 @@
 import streamlit as st
 import random
 import time
+from datetime import datetime
 
 class MemoryGame:
     def __init__(self):
-        self.foods = ['rice', 'potato', 'carrots', 'tomato', 'pasta', 'bread', 'apple', 'pear']
+        weekday_idx = datetime.today().date().weekday()
+        weekday = {
+            1 : "monday", 
+            2 : "tuesday", 
+            3 : "wednesday", 
+            4 : "thursday", 
+            5 : "friday", 
+            6 : "saturday", 
+            7 : "sunday", 
+        }[weekday_idx]
+        self.foods_available = {
+            "monday" : ['rice', 'chicken', 'spinach', 'onions', 'garlic', 'lemon', 'tomato', 'olive oil'], 
+            "tuesday" : ['pasta', 'zucchini', 'ground beef', 'parmesan cheese', 'garlic', 'basil', 'cherry tomatoes'], 
+            "wednesday" : ['potatoes', 'salmon', 'green beans', 'butter', 'rosemary', 'onions', 'carrots'], 
+            "thursday" : ['quinoa', 'avocado', 'cucumber', 'chickpeas', 'feta cheese', 'olive oil', 'lemon', 'spinach'], 
+            "friday" : ['bread', 'cheese', 'tomatoes', 'lettuce', 'ham', 'mustard', 'cucumbers', 'pickles'], 
+            "saturday" : ['pasta', 'eggplant', 'mozzarella', 'basil', 'garlic', 'olive oil', 'tomato sauce'], 
+            "sunday" : ['chicken', 'potatoes', 'rosemary', 'garlic', 'carrots', 'broccoli', 'olive oil', 'lemon']
+        }
+        self.foods = self.foods_available[weekday]
+        self.foods = ['rice', 'chicken', 'spinach', 'onions', 'garlic', 'lemon', 'tomato', 'olive oil']
         if 'board' not in st.session_state:
             self.initialize_game()
 
@@ -48,7 +69,13 @@ def handle_click(i, j):
                 st.session_state.selected = []
 
 def main():
+
+    now = datetime.now()
+    meal = "lunch" if now.hour < 12 else "dinner"
     st.title("🎮 Food Memory Game")
+    st.header("The ingredients are hidden behind the cards. Find all the matching pairs!")
+    st.write(f'''
+    All the ingredients created for the game are generated based on your next {meal}''')
     
     # Initialize game if needed
     if 'game_started' not in st.session_state:

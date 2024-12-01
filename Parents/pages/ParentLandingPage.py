@@ -14,7 +14,6 @@ action = st.sidebar.selectbox(
     ]
 )
 
-
 display_on_page = {
     option : func
     for option, func in zip(options, [simple_chat_page, placeholder_function, register_my_kid])
